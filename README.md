@@ -78,7 +78,7 @@ console.log(blockAndLogStreamer.getLatestReconciledBlock());
 Note: if you have a TypeScript aware editor this will all be available in the tooltip
 * [Filter/FilterOptions](https://github.com/expansejs/expansejs-blockstream/blob/master/source/models/filters.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_newfilter)
 * [Block](https://github.com/expansejs/expansejs-blockstream/blob/master/source/models/block.ts#L3-L22) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getblockbyhash)
-* [Log](https://github.com/expansejs/ethereumjs-blockstream/blob/master/source/models/log.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getfilterchanges)
+* [Log](https://github.com/expansejs/expansejs-blockstream/blob/master/source/models/log.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getfilterchanges)
 
 # Development
 
