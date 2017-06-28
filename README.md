@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/ethereumjs/ethereumjs-blockstream.svg?branch=master)](https://travis-ci.org/ethereumjs/ethereumjs-blockstream) [![Coverage Status](https://coveralls.io/repos/ethereumjs/ethereumjs-blockstream/badge.svg?branch=master&service=github)](https://coveralls.io/github/ethereumjs/ethereumjs-blockstream?branch=master) [![npm version](https://badge.fury.io/js/ethereumjs-blockstream.svg)](https://badge.fury.io/js/ethereumjs-blockstream)
+[![Build Status](https://travis-ci.org/expansejs/expansejs-blockstream.svg?branch=master)](https://travis-ci.org/expansejs/expansejs-blockstream)
 
-A library to turn an unreliable remote source of Ethereum blocks into a reliable stream of blocks.  Handles block and log removals on chain reorganization and block and log backfills on skipped blocks.
+A library to turn an unreliable remote source of Expanse blocks into a reliable stream of blocks.  Handles block and log removals on chain reorganization and block and log backfills on skipped blocks.
 
 # Usage
 
@@ -9,14 +9,14 @@ A library to turn an unreliable remote source of Ethereum blocks into a reliable
 // blockRetention is how many blocks of history to keep in memory.  it defaults to 100 if not supplied
 const configuration = { blockRetention: 100 };
 function getBlockByHash(hash: string): Promise<Block|null> {
-    return fetch("http://localhost:8545", {
+    return fetch("http://localhost:9656", {
         method: "POST",
         headers: new Headers({"Content-Type": "application/json"}),
         body: { jsonrpc: "2.0", id: 1, method: "eth_getBlockByHash", params: [hash, false] }
     }).then(response => response.json());
 }
 //function getBlockByHashCallbackStyle(hash: string, callback: (error?: Error, block?: Block|null) => void): void {
-//    fetch("http://localhost:8545", {
+//    fetch("http://localhost:9656", {
 //        method: "POST",
 //        headers: new Headers({"Content-Type": "application/json"}),
 //        body: { jsonrpc: "2.0", id: 1, method: "eth_getBlockByHash", params: [hash, false] }
@@ -26,14 +26,14 @@ function getBlockByHash(hash: string): Promise<Block|null> {
 //    .catch(error => callback(error, undefined));
 //}
 function getLogs(filterOptions: FilterOptions): Promise<Log[]> {
-    return fetch("http://localhost:8545", {
+    return fetch("http://localhost:8656", {
         method: "POST",
         headers: new Headers({"Content-Type": "application/json"}),
         body: { jsonrpc: "2.0", id: 1, method: "eth_getLogs", params: [filterOptions] }
     }).then(response => response.json());
 }
 //function getLogsCallbackStyle(filterOptions: FilterOptions, callback: (error?: Error, logs?: Log[]) => void): void {
-//    return fetch("http://localhost:8545", {
+//    return fetch("http://localhost:9656", {
 //        method: "POST",
 //        headers: new Headers({"Content-Type": "application/json"}),
 //        body: { jsonrpc: "2.0", id: 1, method: "eth_getLogs", params: [filterOptions] }
@@ -43,7 +43,7 @@ function getLogs(filterOptions: FilterOptions): Promise<Log[]> {
 //    .catch(error => callback(error, undefined));
 //}
 function getLatestBlock(): Promise<Block> {
-    return fetch("http://localhost:8545", {
+    return fetch("http://localhost:9656", {
         method: "POST",
         headers: new Headers({"Content-Type": "application/json"}),
         body: { jsonrpc: "2.0", id: 1, method: "eth_getBlockByNumber", params: ["latest", false] }
@@ -76,9 +76,9 @@ console.log(blockAndLogStreamer.getLatestReconciledBlock());
 
 ## Signatures
 Note: if you have a TypeScript aware editor this will all be available in the tooltip
-* [Filter/FilterOptions](https://github.com/ethereumjs/ethereumjs-blockstream/blob/master/source/models/filters.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_newfilter)
-* [Block](https://github.com/ethereumjs/ethereumjs-blockstream/blob/master/source/models/block.ts#L3-L22) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getblockbyhash)
-* [Log](https://github.com/ethereumjs/ethereumjs-blockstream/blob/master/source/models/log.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getfilterchanges)
+* [Filter/FilterOptions](https://github.com/expansejs/expansejs-blockstream/blob/master/source/models/filters.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_newfilter)
+* [Block](https://github.com/expansejs/expansejs-blockstream/blob/master/source/models/block.ts#L3-L22) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getblockbyhash)
+* [Log](https://github.com/expansejs/ethereumjs-blockstream/blob/master/source/models/log.ts#L1-L10) - More details at [Parity JSON-RPC Wiki](https://github.com/paritytech/parity/wiki/JSONRPC-eth-module#eth_getfilterchanges)
 
 # Development
 
