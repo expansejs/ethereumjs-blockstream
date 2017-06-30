@@ -27,7 +27,7 @@ function getBlockByHash(hash: string): Promise<Block|null> {
 //    .catch(error => callback(error, undefined));
 //}
 function getLogs(filterOptions: FilterOptions): Promise<Log[]> {
-    return fetch("http://localhost:8656", {
+    return fetch("http://localhost:9656", {
         method: "POST",
         headers: new Headers({"Content-Type": "application/json"}),
         body: { jsonrpc: "2.0", id: 1, method: "eth_getLogs", params: [filterOptions] }
