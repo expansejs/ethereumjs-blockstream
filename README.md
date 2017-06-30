@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/expansejs/expansejs-blockstream.svg?branch=master)](https://travis-ci.org/expansejs/expansejs-blockstream)
-
+[![NPM Package](https://img.shields.io/npm/v/expansejs-blockstream.svg?style=flat-square)](https://www.npmjs.org/package/expansejs-blockstream)
+[![Build Status](https://img.shields.io/travis/expansejs/expansejs-blockstream.svg?branch=master&style=flat-square)](https://travis-ci.org/expansejs/expansejs-blockstream)
+[![Coverage Status](https://img.shields.io/coveralls/expansejs/expansejs-blockstream.svg?style=flat-square)](https://coveralls.io/r/expansejs/expansejs-blockstream)
 A library to turn an unreliable remote source of Expanse blocks into a reliable stream of blocks.  Handles block and log removals on chain reorganization and block and log backfills on skipped blocks.
 
 # Usage
